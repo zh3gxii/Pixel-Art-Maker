@@ -6,6 +6,7 @@ const height = document.getElementById('inputHeight');
 const width = document.getElementById('inputWidth');
     
 function makeGrid() {
+    // Creates rows and cells
     for (let i = 0; i < height.value; i++) {
         let tRow = document.createElement('tr');
         canvas.appendChild(tRow);
@@ -14,8 +15,10 @@ function makeGrid() {
             tRow.appendChild(tCol);            
         }  
     }
-    canvas.addEventListener('click', function (event) {
-        event.target.style.background = color.value;  
+    // Fills in cell with selected color
+    canvas.addEventListener("click", function (event) {
+       event.preventDefault();
+       event.target.style.background = color.value;
     })
 }
  
