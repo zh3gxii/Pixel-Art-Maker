@@ -21,9 +21,13 @@ function makeGrid() {
        event.target.style.background = color.value;
     })
 }
- 
-//call makeGrid()
-size.addEventListener('submit', function(e){
+ // Removes color from cell by double click
+canvas.addEventListener('dblclick', function (e) {
+  e.target.style.background = null;
+});
+
+//Once user submit call makeGrid()
+size.addEventListener('submit', function(e) {
     e.preventDefault();
     makeGrid();  
 })
