@@ -7,6 +7,7 @@ const width = document.getElementById('inputWidth');
     
 function makeGrid() {
     // Creates rows and cells
+    canvas.innerHTML = '';
     for (let i = 0; i < height.value; i++) {
         let tRow = document.createElement('tr');
         canvas.appendChild(tRow);
@@ -21,8 +22,9 @@ function makeGrid() {
        event.target.style.background = color.value;
     })
 }
- // Removes color from cell by double click
-canvas.addEventListener('dblclick', function (e) {
+
+// Removes color from cell upon double-click
+canvas.addEventListener('dblclick', function(e) {
   e.target.style.background = null;
 });
 
